@@ -1,0 +1,56 @@
+.watch(@font-size: 1em, @hour: 0, @back-color: #83C7DA, @point-color: #FFF) {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    font-size: @font-size;
+    border-radius: 0.5em;
+    background-color: @back-color;
+
+    /* Point */
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;
+        margin-top: -0.04em;
+        width: 0.45em;
+        height: 0.08em;
+        font-size: inherit;
+        background-color: @point-color;
+        border-radius: 0.5em;
+        @deg: 1deg * (@hour - 3) * 360 / 12;
+        -webkit-transform: rotate(@deg);
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform: rotate(@deg);
+        -moz-transform-origin: 0% 50%;
+        -ms-transform: rotate(@deg);
+        -ms-transform-origin: 0% 50%;
+        -o-transform: rotate(@deg);
+        -o-transform-origin: 0% 50%;
+        transform: rotate(@deg);
+        transform-origin: 0% 50%;
+    }
+
+    /* circle */
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0.4em;
+        left: 0.4em;
+        width: 0.2em;
+        height: 0.2em;
+        border-radius: 0.2em;
+        background-color: @point-color;
+    }
+}
+
+.stopwatch(@font-size: 1em, @back-color: #83C7DA, @point-color: #FFF) {
+    .watch(@font-size, 3, @back-color, @point-color);
+}
+
+.stopwatch {
+    .stopwatch(8em);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
