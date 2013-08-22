@@ -49,6 +49,20 @@
         background-color: @point-color;
     }
 
+
+    .watch-tp {
+        content: '';
+        position: absolute;
+        z-index: 4;
+        top: -0.06em;
+        left: 50%;
+        margin-left: -0.075em;
+        width: 0.15em;
+        height: 0.2em;
+        border-radius: 0.2em;
+        background-color: @watch-color;
+    }
+
     .watch-hd {
         &:before,
         &:after {
@@ -168,9 +182,17 @@
     @keyframes stopwatch-rotate {
         0% {
             -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
         }
         100% {
             -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            transform: rotate(270deg);
         }
     }
 
