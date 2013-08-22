@@ -49,6 +49,62 @@
         background-color: @point-color;
     }
 
+    @tick-thickness: 0.1em;
+    &.watch-done:before {
+        z-index: 6;
+        top: 0.6em;
+        left: 0.5em - 0.25em;
+        margin-left: -0.05em;
+        width: 0.25em;
+        height: @tick-thickness;
+        border-radius: 0.3em 0 0 0.3em;
+        @deg: 45deg;
+        -webkit-transform: rotate(@deg);
+        -webkit-transform-origin: 100% 50%;
+        -moz-transform: rotate(@deg);
+        -moz-transform-origin: 100% 50%;
+        -ms-transform: rotate(@deg);
+        -ms-transform-origin: 100% 50%;
+        -o-transform: rotate(@deg);
+        -o-transform-origin: 100% 50%;
+        transform: rotate(@deg);
+        transform-origin: 100% 50%;
+    }
+    &.watch-done:after {
+        content: '';
+        position: absolute;
+        z-index: 6;
+        top: 0.5em + 0.1em;
+        left: 0.5em - 0.05em;
+        margin-left: -0.05em;
+        width: 0.1em;
+        height: @tick-thickness;
+        border-radius: 0.3em;
+        background-color: @point-color;
+    }
+    &.watch-done .watch-point {
+        z-index: 6;
+        top: 0.6em;
+        margin-top: 0;
+        margin-left: -0.05em;
+        width: 0.5em;
+        height: @tick-thickness;
+        border-radius: 0 0.3em 0.3em 0;
+        -webkit-animation-name: none;
+        animation-name: none;
+        @deg: -45deg;
+        -webkit-transform: rotate(@deg);
+        -webkit-transform-origin: 0% 50%;
+        -moz-transform: rotate(@deg);
+        -moz-transform-origin: 0% 50%;
+        -ms-transform: rotate(@deg);
+        -ms-transform-origin: 0% 50%;
+        -o-transform: rotate(@deg);
+        -o-transform-origin: 0% 50%;
+        transform: rotate(@deg);
+        transform-origin: 0% 50%;
+    }
+
 
     .watch-tp {
         content: '';
@@ -143,11 +199,11 @@
 
     .watch-fore {
         position: absolute;
-        top: 0.025em;
-        left: 0.025em;
+        top: 1em / 32;
+        left: 1em / 32;
         z-index: 3;
-        width: 0.95em;
-        height: 0.95em;
+        width: 15em / 16;
+        height: 15em / 16;
         font-size: inherit;
         border-radius: 0.5em;
         background-color: @watch-color;
@@ -210,9 +266,16 @@
     }
 }
 
-.stopwatch {
+.stopwatch1 {
     .stopwatch(8em);
     position: absolute;
     top: 100px;
     left: 100px;
+}
+
+.stopwatch2 {
+    .stopwatch(8em);
+    position: absolute;
+    top: 100px;
+    left: 300px;
 }
