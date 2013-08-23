@@ -1,9 +1,11 @@
 .watch(
     @font-size: 1em,
     @hour: 0,
-    @watch-color: #83C7DA,
+    @watch-color: #5cb5ce,
     @point-color: #FFF,
     @border-color: #FFF) {
+
+    @lighten-watch-color: lighten(@watch-color, 5%);
 
     position: relative;
     width: 1em;
@@ -14,7 +16,7 @@
     .watch-point {
         content: '';
         position: absolute;
-        z-index: 4;
+        z-index: 6;
         top: 0.5em;
         left: 0.5em;
         margin-top: -0.04em;
@@ -40,7 +42,7 @@
     &:before {
         content: '';
         position: absolute;
-        z-index: 4;
+        z-index: 6;
         top: 0.4em;
         left: 0.4em;
         width: 0.2em;
@@ -105,11 +107,10 @@
         transform-origin: 0% 50%;
     }
 
-
     .watch-tp {
         content: '';
         position: absolute;
-        z-index: 4;
+        z-index: 3;
         top: -0.06em;
         left: 50%;
         margin-left: -0.075em;
@@ -151,7 +152,7 @@
             bottom: 0.1em;
             font-size: inherit;
             width: 0.15em;
-            height: 0.4em;
+            height: 0.3em;
             background: @watch-color;
             border-radius: 0.4em;
         }
@@ -201,56 +202,27 @@
         position: absolute;
         top: 1em / 32;
         left: 1em / 32;
-        z-index: 3;
+        z-index: 4;
         width: 15em / 16;
         height: 15em / 16;
         font-size: inherit;
         border-radius: 0.5em;
         background-color: @watch-color;
+        // background-image: linear-gradient(135deg, @watch-color 0%, @lighten-watch-color 70%, @watch-color 90%);
+        background-image: radial-gradient(circle, @lighten-watch-color 35%, @watch-color 70%);
+
     }
 }
 
 .stopwatch(
     @font-size: 1em,
     @duration: 2,
-    @watch-color: #83C7DA,
+    @watch-color: #5cb5ce,
     @point-color: #FFF,
     @border-color: #FFF) {
 
     .watch(@font-size, 3, @watch-color, @point-color, @border-color);
-    @-webkit-keyframes stopwatch-rotate {
-        0% {
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-            -o-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-        }
-        100% {
-            -webkit-transform: rotate(270deg);
-            -moz-transform: rotate(270deg);
-            -ms-transform: rotate(270deg);
-            -o-transform: rotate(270deg);
-            transform: rotate(270deg);
-        }
-    }
 
-    @keyframes stopwatch-rotate {
-        0% {
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-            -o-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-        }
-        100% {
-            -webkit-transform: rotate(270deg);
-            -moz-transform: rotate(270deg);
-            -ms-transform: rotate(270deg);
-            -o-transform: rotate(270deg);
-            transform: rotate(270deg);
-        }
-    }
 
     .watch-point {
         -webkit-animation-timing-function: linear;
@@ -263,6 +235,39 @@
         animation-duration: @duration * 1s;
         animation-iteration-count: infinite;
         animation-name: stopwatch-rotate;
+    }
+}
+
+@-webkit-keyframes stopwatch-rotate {
+    0% {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+@keyframes stopwatch-rotate {
+    0% {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg);
     }
 }
 
