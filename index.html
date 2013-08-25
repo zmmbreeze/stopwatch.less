@@ -7,7 +7,7 @@
     <script type="text/javascript" src="less-1.3.3.min.js"></script>
 </head>
 <body>
-    <span class="stopwatch2">
+    <span class="stopwatch bounceInDown">
         <span class="watch-tp"></span>
         <span class="watch-hd"></span>
         <span class="watch-ft"></span>
@@ -16,22 +16,12 @@
         <span class="watch-point"></span>
     </span>
 
-    <span class="stopwatch1 watch-done">
-        <span class="watch-tp"></span>
-        <span class="watch-hd"></span>
-        <span class="watch-ft"></span>
-        <span class="watch-back"></span>
-        <span class="watch-fore"></span>
-        <span class="watch-point"></span>
-    </span>
 
-    <div>
-        <input type="button" value="SHOW" />
-        <input type="button" value="HIDE" />
-    </div>
-
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
     <script type="text/javascript">
-    
+    setTimeout(function() {
+        $('.stopwatch').addClass('watch-done');
+    }, 3000);
     </script>
 </body>
 </html>

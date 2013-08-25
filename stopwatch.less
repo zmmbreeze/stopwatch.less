@@ -36,6 +36,11 @@
         -o-transform-origin: 0% 50%;
         transform: rotate(@deg);
         transform-origin: 0% 50%;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
     }
 
     /* circle */
@@ -49,6 +54,11 @@
         height: 0.2em;
         border-radius: 0.2em;
         background-color: @point-color;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
     }
 
     @tick-thickness: 0.1em;
@@ -271,16 +281,72 @@
     }
 }
 
-.stopwatch1 {
-    .stopwatch(8em);
+@-webkit-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(-2000px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(-2000px);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(-2000px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(-2000px);
+    }
+}
+
+.stopwatch {
+    .stopwatch(3em);
     position: absolute;
     top: 100px;
     left: 100px;
 }
 
-.stopwatch2 {
-    .stopwatch(8em);
-    position: absolute;
-    top: 100px;
-    left: 300px;
+.bounceInDown {
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    -o-animation-name: bounceInDown;
+    animation-name: bounceInDown;
 }
