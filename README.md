@@ -3,4 +3,4 @@ stopwatch.less
 
 Stopwatch style in less
 
-Check out [demo](https://github.com/zmmbreeze/stopwatch.less) on codepen.io.
+Check out [demo](http://codepen.io/zmmbreeze/pen/zsLrD) on codepen.io.
